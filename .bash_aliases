@@ -13,5 +13,17 @@ alias s='git status'
 
 
 # shares
+waits() {
+    BASE_PATH=""
+    
+    if [ -d "/workspace/shares" ]; then
+        BASE_PATH="/workspace/shares"
+    elif [ -d "/workspaces/shares" ]; then
+        BASE_PATH="/workspaces/shares"
+    else
+        return 1
+    fi
 
-alias waits="/workspace/shares/projects/backend/scripts/wait_for_backend.sh && /workspace/shares/projects/backend/scripts/wait_for_test_server.sh"
+    "$BASE_PATH/projects/backend/scripts/wait_for_backend.sh" && \
+    "$BASE_PATH/projects/backend/scripts/wait_for_test_server.sh"
+}
