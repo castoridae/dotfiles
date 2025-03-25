@@ -27,3 +27,7 @@ waits() {
     "$BASE_PATH/projects/backend/scripts/wait_for_backend.sh" && \
     "$BASE_PATH/projects/backend/scripts/wait_for_test_server.sh"
 }
+
+if [ -d "/workspace/shares" ]; then
+    alias shares="node /workspaces/shares/projects/tools/cli/bin/run"
+fi
