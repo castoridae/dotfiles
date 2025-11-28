@@ -30,4 +30,5 @@ waits() {
 
 if [ -d "/workspaces/shares" ]; then
     alias shares="node /workspaces/shares/projects/tools/cli/bin/run"
+    GIT_EDITOR=vim
 fi
